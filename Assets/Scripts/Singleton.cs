@@ -5,6 +5,7 @@ using UnityEngine;
 public class Singleton : MonoBehaviour {
 
 	private static Singleton instance;
+	public float speed;
 
 	public static Singleton GetInstance{
 		get{
