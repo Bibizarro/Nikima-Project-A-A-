@@ -8,6 +8,8 @@ public class MenuScript : MonoBehaviour {
 	[SerializeField] private Button playButton;
 	[SerializeField] private Animator playAnimator;
 
+	[SerializeField] private AudioSource audio;
+
 	void Start () {
 
 	}
@@ -19,5 +21,6 @@ public class MenuScript : MonoBehaviour {
 	public void PlayAnimation(){
 		//playButton.interactable = false;
 		playAnimator.SetTrigger("fadeOut");
+		audio.Play();
 	}
 }
