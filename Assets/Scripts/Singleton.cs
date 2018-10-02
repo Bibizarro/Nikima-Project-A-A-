@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Singleton : MonoBehaviour {
 
+    public GameObject player;
+
+
 	private static Singleton instance;
 	public float speed;
 
