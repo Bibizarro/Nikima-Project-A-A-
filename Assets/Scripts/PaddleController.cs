@@ -6,10 +6,12 @@ public class PaddleController : MonoBehaviour {
 
     [SerializeField]
 	private int speed;
+
     private float axisX;
 
-	void Start () {
-		
+	void Start ()
+    {
+        
 	}
 	
 	// Update is called once per frame

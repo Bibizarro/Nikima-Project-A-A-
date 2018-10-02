@@ -5,10 +5,10 @@ using UnityEngine;
 public class Singleton : MonoBehaviour {
 
     public GameObject player;
-
+    public Canvas HUD;
 
 	private static Singleton instance;
-	public float speed;
+	
 
 	public static Singleton GetInstance{
 		get{
