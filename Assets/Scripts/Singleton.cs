@@ -6,6 +6,7 @@ public class Singleton : MonoBehaviour {
 
     public GameObject player;
     public Canvas HUD;
+	public Transform paddleTransform;
 
 	private static Singleton instance;
 	

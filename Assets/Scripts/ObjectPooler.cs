@@ -22,7 +22,7 @@ public class ObjectPooler : MonoBehaviour {
 	}
 
 	void Create(){
-		GameObject obj = (GameObject) Instantiate(pooledObject);
+		GameObject obj = (GameObject) Instantiate(pooledObject, parent: transform);
 		obj.SetActive(false);
 		pooledObjects.Add(obj);
 	}
@@ -36,7 +36,7 @@ public class ObjectPooler : MonoBehaviour {
 		}
 
 		if(willGrow){
-			GameObject obj = (GameObject) Instantiate(pooledObject);
+			GameObject obj = (GameObject) Instantiate(pooledObject, parent: transform);
 			pooledObjects.Add(obj);
 			return obj;
 		}
