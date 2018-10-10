@@ -288,46 +288,31 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114600590618453478, guid: 79167250dae14524982406dbbb0df546,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 660628899}
-    - target: {fileID: 114600590618453478, guid: 79167250dae14524982406dbbb0df546,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 660628899}
-    - target: {fileID: 114350019608703350, guid: 79167250dae14524982406dbbb0df546,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 660628899}
-    - target: {fileID: 114350019608703350, guid: 79167250dae14524982406dbbb0df546,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 660628899}
     - target: {fileID: 223692532281033902, guid: 79167250dae14524982406dbbb0df546,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 716715504}
-    - target: {fileID: 224469577019408256, guid: 79167250dae14524982406dbbb0df546,
+    - target: {fileID: 114600590618453478, guid: 79167250dae14524982406dbbb0df546,
         type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224469577019408256, guid: 79167250dae14524982406dbbb0df546,
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 660628899}
+    - target: {fileID: 114600590618453478, guid: 79167250dae14524982406dbbb0df546,
         type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224469577019408256, guid: 79167250dae14524982406dbbb0df546,
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 660628899}
+    - target: {fileID: 114350019608703350, guid: 79167250dae14524982406dbbb0df546,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 660628899}
+    - target: {fileID: 114350019608703350, guid: 79167250dae14524982406dbbb0df546,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 660628899}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79167250dae14524982406dbbb0df546, type: 2}
   m_IsPrefabParent: 0
@@ -386,6 +371,16 @@ Prefab:
       propertyPath: arrowsUI
       value: 
       objectReference: {fileID: 647046712}
+    - target: {fileID: 114109870393754802, guid: fbab56633a24ea740962d0729f3bde3b,
+        type: 2}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 1014641843}
+    - target: {fileID: 114109870393754802, guid: fbab56633a24ea740962d0729f3bde3b,
+        type: 2}
+      propertyPath: cameraScript
+      value: 
+      objectReference: {fileID: 716715507}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbab56633a24ea740962d0729f3bde3b, type: 2}
   m_IsPrefabParent: 0
@@ -501,6 +496,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564b054d023c59a43bec58e8fdeadbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1014641843 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114252423304831976, guid: 79167250dae14524982406dbbb0df546,
+    type: 2}
+  m_PrefabInternal: {fileID: 304602839}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1956865986
 GameObject:
   m_ObjectHideFlags: 0

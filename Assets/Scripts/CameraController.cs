@@ -11,19 +11,6 @@ public class CameraController : MonoBehaviour
         an = GetComponent<Animator>();
     }
 
-    public static CameraController GetInstance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = GameObject.FindObjectOfType<CameraController>();
-            }
-            return instance;
-        }
-    }
-
-
 
     public void CameraShake()
     {

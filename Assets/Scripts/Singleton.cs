@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Singleton : MonoBehaviour {
 
     public GameObject player;
-    public Canvas HUD;
+
+public PaddleController playerScript;
+
+    public Canvas HUDGameplay;
+
+	public CameraController cameraScript;
+	
 	public Transform paddleTransform;
 
 	private static Singleton instance;

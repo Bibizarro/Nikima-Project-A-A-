@@ -13,16 +13,20 @@ public class BallScript : MonoBehaviour {
 		rb.AddForce(new Vector2(ballForce, ballForce));
 	}
 
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.X)){
-			Fire();
-		}
+	void Update () 
+	{
+	
 	}
-	void Fire(){
-		
-		paddle = Singleton.GetInstance.paddleTransform;
-		GameObject obj =  ObjectPooler.instance.GetPooledObject();
-		obj.transform.position = paddle.position;
-		obj.SetActive(true);
+
+	void OnTriggerEnter2D (Collider2D coll)
+	{
+    if(coll.gameObject.tag == "ScreenBottom")
+	{
+		Singleton.GetInstance.cameraScript.CameraShake();
+		Singleton.GetInstance.playerScript.health-=1;
+		gameObject.SetActive(false);
 	}
+
+	}
+	
 }
