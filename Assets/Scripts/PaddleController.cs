@@ -30,11 +30,13 @@ health = 3;
 			Fire();
 		}
 	}
-
-void Fire(){
+    
+    void Fire()
+    {
       GameObject obj =  ObjectPooler.instance.GetPooledObject();
 		obj.transform.position = transform.position;
-		obj.SetActive(true);}
+		obj.SetActive(true);
+    }
 
     public void MoveRight()
     {
