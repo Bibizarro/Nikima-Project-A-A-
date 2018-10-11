@@ -12,6 +12,16 @@ public class BallShot : MonoBehaviour {
 
 	void Update () {
 		LookAtTouch(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		if(Input.GetMouseButtonDown(0)){
+			Fire();
+		}
+	}
+
+	void Fire(){
+		GameObject obj = ObjectPooler.instance.GetPooledObject();
+		if(obj != null){
+			obj.SetActive(true);
+		}
 	}
 
 	void LookAtTouch(Vector3 mouseInput){

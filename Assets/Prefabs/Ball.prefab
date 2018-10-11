@@ -92,7 +92,8 @@ MonoBehaviour:
   paddle: {fileID: 0}
   rb: {fileID: 50304104721874906}
   ballForce: 500
-  time: 1
+  direction: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
 --- !u!212 &212897272649862342
 SpriteRenderer:
   m_ObjectHideFlags: 1

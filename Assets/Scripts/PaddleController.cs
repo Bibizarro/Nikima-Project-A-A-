@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PaddleController : MonoBehaviour {
+
     [SerializeField]
     private float speed;
     public int health;
     private Rigidbody2D rb;
 
-
-
-	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-health = 3;
-		
+        health = 3;
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
         print(health);
@@ -54,8 +50,5 @@ health = 3;
     public void StopMoveLeft()
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
-      
     }
-
-
 }

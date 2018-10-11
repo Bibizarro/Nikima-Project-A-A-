@@ -170,7 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 740902854}
-  HUD: {fileID: 0}
+  playerScript: {fileID: 0}
+  HUDGameplay: {fileID: 0}
+  cameraScript: {fileID: 0}
   paddleTransform: {fileID: 740902855}
 --- !u!1 &667827474
 GameObject:
@@ -1334,7 +1336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2052744367
 Transform:
   m_ObjectHideFlags: 0
