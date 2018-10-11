@@ -7,25 +7,22 @@ public class PaddleController : MonoBehaviour {
     private float speed;
     public int health;
     private Rigidbody2D rb;
+    private int ballsHitted;
+    
 
 
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-health = 3;
+        health = 3;
 		
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        print(health);
-       if(Input.GetMouseButtonDown(0))
-       {
-           Singleton.GetInstance.cameraScript.CameraShake();
-       }
-
+       
        if(Input.GetKeyDown(KeyCode.X)){
 			Fire();
 		}
@@ -55,6 +52,24 @@ health = 3;
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
       
+    }
+
+
+    void AddingBalls()
+    {
+        if (ballsHitted == 3)
+        {
+            //adicionar uma bola 
+            ballsHitted = 0;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "GreenBall" || coll.gameObject.tag == "OrangeBall" || coll.gameObject.tag == "BlueBall" || coll.gameObject.tag == "PinkBall")
+        {
+            ballsHitted += 1;
+        }
     }
 
 
