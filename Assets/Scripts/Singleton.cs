@@ -7,13 +7,14 @@ public class Singleton : MonoBehaviour {
 
     public GameObject player;
 
-public PaddleController playerScript;
+	public PaddleController playerScript;
 
     public Canvas HUDGameplay;
 
 	public CameraController cameraScript;
 	
 	public Transform paddleTransform;
+	public BallShot ballShot;
 
 	private static Singleton instance;
 	
