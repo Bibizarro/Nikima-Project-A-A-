@@ -4,13 +4,37 @@ using UnityEngine;
 
 public class SetGlitch : MonoBehaviour {
 
-	// Use this for initialization
+	Animator anim;
+	public float delayTime;
+
+	public bool glitchAll;
 	void Start () {
-		
+		anim = GetComponent<Animator>();
+		StartCoroutine("GlitchWithTime");
+		StartCoroutine("GlitchAll");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void GlitchNow()
+	{
+		 anim.SetTrigger("glitching");
 	}
+
+	IEnumerator GlitchWithTime()
+	{
+     yield return new WaitForSeconds(delayTime);
+	 anim.SetTrigger("glitching");
+	 StartCoroutine("GlitchWithTime");
+	}
+
+	IEnumerator GlitchAll()
+	{
+		if(glitchAll){
+     yield return new WaitForSeconds(10f);
+	 BroadcastMessage("GlitchNow");
+	 }
+	 
+	}
+
+
 }
