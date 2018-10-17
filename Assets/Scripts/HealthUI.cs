@@ -4,19 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthUI : MonoBehaviour {
 
-public Sprite[] healthSprites;
+	public Sprite[] healthSprites;
+	public Image UIsprite;
 
-public Image UIsprite;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
+		int currentLife = Singleton.GetInstance.playerScript.health;
 
-		UIsprite.sprite = healthSprites[Singleton.GetInstance.playerScript.health];
-		
+		if(currentLife > healthSprites.Length || currentLife < 0) 
+			return;
+
+		UIsprite.sprite = healthSprites[currentLife];
 	}
 }

@@ -91,8 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle: {fileID: 0}
   rb: {fileID: 50304104721874906}
-  ballForce: 500
-  time: 1
+  ballForce: 1000
 --- !u!212 &212897272649862342
 SpriteRenderer:
   m_ObjectHideFlags: 1

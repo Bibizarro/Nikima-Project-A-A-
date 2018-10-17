@@ -28,28 +28,14 @@ public class BallScript : MonoBehaviour {
 			gameObject.SetActive(false);
 		}
 	}
-	void Shot(Transform target, Vector3 railDirection)
-    {
-        Vector3 heading = target.position - transform.position;
-        Vector3 force = Vector3.Project(heading, railDirection);
-
-        GetComponent<Rigidbody>().AddForce(force);
-    }
 
 	void Shot(){
 		var rotationZ = Singleton.GetInstance.ballShot.rotZ;
-		/*
-		float forceY = ballForce * Mathf.Sin(Singleton.GetInstance.ballShot.transform.rotation.z);
-		float forceX = ballForce * Mathf.Cos(Singleton.GetInstance.ballShot.transform.rotation.z);
-		*/
-		Vector3 dir = Quaternion.AngleAxis(rotationZ, Vector3.forward) * Vector3.right;
-		if(rotationZ > 0){
+
+		if(rotationZ < 0){
+			Vector3 dir = Quaternion.AngleAxis(rotationZ, Vector3.forward) * Vector3.right;
   			rb.AddForce(dir * ballForce);
 		}
-		else{
-			rb.AddForce(dir * -ballForce);
-		}
-
-		rb.AddForce(transform.forward * ballForce);
+		//rb.AddForce(transform.forward * ballForce);
 	}
 }
