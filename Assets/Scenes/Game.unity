@@ -340,11 +340,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4997333681932332, guid: 1da07fb83a813bf4383be63c918bde47, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4997333681932332, guid: 1da07fb83a813bf4383be63c918bde47, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114894636973140964, guid: 1da07fb83a813bf4383be63c918bde47,
+        type: 2}
+      propertyPath: ballCountScript
+      value: 
+      objectReference: {fileID: 1867362408}
+    - target: {fileID: 4997333681932332, guid: 1da07fb83a813bf4383be63c918bde47, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114148773480709558, guid: 1da07fb83a813bf4383be63c918bde47, type: 2}
@@ -359,7 +368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 427981853}
   - component: {fileID: 427981852}
-  - component: {fileID: 427981851}
   m_Layer: 0
   m_Name: ObjectPooler
   m_TagString: Untagged
@@ -367,23 +375,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &427981851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 427981850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b398d648c57c1947be608dba764b82b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerScript: {fileID: 0}
-  HUDGameplay: {fileID: 0}
-  cameraScript: {fileID: 0}
-  paddleTransform: {fileID: 0}
-  ballShot: {fileID: 0}
 --- !u!114 &427981852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,11 +555,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4432560988619420, guid: 79ca55cedbac5f44ca24c843a141d7c4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.185
       objectReference: {fileID: 0}
     - target: {fileID: 4432560988619420, guid: 79ca55cedbac5f44ca24c843a141d7c4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.755
       objectReference: {fileID: 0}
     - target: {fileID: 4432560988619420, guid: 79ca55cedbac5f44ca24c843a141d7c4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -593,6 +584,10 @@ Prefab:
     - target: {fileID: 4432560988619420, guid: 79ca55cedbac5f44ca24c843a141d7c4, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537844014156488, guid: 79ca55cedbac5f44ca24c843a141d7c4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79ca55cedbac5f44ca24c843a141d7c4, type: 2}
@@ -782,7 +777,7 @@ Prefab:
     - target: {fileID: 114712492225865942, guid: 94c33f67172421546b67db769e7623d8,
         type: 2}
       propertyPath: arrowsTest
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114712492225865942, guid: 94c33f67172421546b67db769e7623d8,
         type: 2}
@@ -808,6 +803,29 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 326956985}
   m_Script: {fileID: 11500000, guid: 9f3ccc2f9896b184d83c4a4b395d8cd6, type: 3}
+--- !u!1 &1867362404 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1535146531112376, guid: 79167250dae14524982406dbbb0df546,
+    type: 2}
+  m_PrefabInternal: {fileID: 1454629177}
+--- !u!114 &1867362406 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114304343297907122, guid: 79167250dae14524982406dbbb0df546,
+    type: 2}
+  m_PrefabInternal: {fileID: 1454629177}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1867362408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867362404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0025795fe79bb38448068593e842ac05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textCount: {fileID: 1867362406}
 --- !u!1 &1888161443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1043,7 @@ GameObject:
   - component: {fileID: 2018149608}
   - component: {fileID: 2018149607}
   m_Layer: 0
-  m_Name: "El Cabe\xE7\xF3n"
+  m_Name: RobbotHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
