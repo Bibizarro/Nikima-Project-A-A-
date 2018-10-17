@@ -3,37 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PaddleController : MonoBehaviour {
-    [SerializeField]
-    private float speed;
-    public int health;
-    private Rigidbody2D rb;
-    private int ballsHitted;
+
     
+    public int health;
+    public int ballCount;
+    public int ballsHitted;
+    public int activeBall;
+    private Rigidbody2D rb;
+    [SerializeField] private float speed;
+    [SerializeField] private BallCount ballCountScript;
 
-
-
-	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         health = 3;
-		
+        activeBall = 0;
+        ballCount = 3;
+        ballCountScript.UpdateUI(ballCount);
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
-       
-       if(Input.GetKeyDown(KeyCode.X)){
-			Fire();
-		}
+        
 	}
-    
-    void Fire()
-    {
-      GameObject obj =  ObjectPooler.instance.GetPooledObject();
-		obj.transform.position = transform.position;
-		obj.SetActive(true);
-    }
 
     public void MoveRight()
     {
@@ -54,13 +45,16 @@ public class PaddleController : MonoBehaviour {
       
     }
 
-
     void AddingBalls()
     {
         if (ballsHitted == 3)
         {
-            //adicionar uma bola 
+            //Add a ball;
             ballsHitted = 0;
+            if(ballCount < 8){
+                ballCount++;
+                ballCountScript.UpdateUI(ballCount);
+            }
         }
     }
 
@@ -68,7 +62,8 @@ public class PaddleController : MonoBehaviour {
     {
         if (coll.gameObject.tag == "GreenBall" || coll.gameObject.tag == "OrangeBall" || coll.gameObject.tag == "BlueBall" || coll.gameObject.tag == "PinkBall")
         {
-            ballsHitted += 1;
+            ballsHitted++;
+            AddingBalls();
         }
     }
 

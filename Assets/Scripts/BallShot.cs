@@ -9,8 +9,11 @@ public class BallShot : MonoBehaviour {
 	[SerializeField] private float[] limits;
 
 	void Update () {
-		if(Input.GetMouseButtonDown(0) && rotZ > 0){
-			Shot();
+		if(Input.GetMouseButtonUp(0) && rotZ > 0){
+			PaddleController playerScript = Singleton.GetInstance.playerScript;
+			if(playerScript.activeBall < playerScript.ballCount){
+				Shot();
+			}
 		}
 
 		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -27,6 +30,7 @@ public class BallShot : MonoBehaviour {
 		if(obj != null){
 			obj.transform.position = transform.position;
 			obj.SetActive(true);
+			Singleton.GetInstance.playerScript.activeBall++;
 		}
 
 	}
