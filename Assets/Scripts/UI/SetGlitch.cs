@@ -6,11 +6,15 @@ public class SetGlitch : MonoBehaviour {
 
 	Animator anim;
 	public float delayTime;
-
+    public bool glitchWithoutClick;
 	public bool glitchAll;
 	void Start () {
 		anim = GetComponent<Animator>();
-		StartCoroutine("GlitchWithTime");
+        if (glitchWithoutClick)
+        {
+            StartCoroutine("GlitchWithTime");
+        }
+
 		StartCoroutine("GlitchAll");
 	}
 	
@@ -32,7 +36,10 @@ public class SetGlitch : MonoBehaviour {
 		if(glitchAll){
      yield return new WaitForSeconds(10f);
 	 BroadcastMessage("GlitchNow");
-	 }
+            yield return new WaitForSeconds(1f);
+            BroadcastMessage("GlitchNow");
+
+        }
 	 
 	}
 
