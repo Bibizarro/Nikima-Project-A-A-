@@ -16,6 +16,8 @@ public class Singleton : MonoBehaviour {
 	public Transform paddleTransform;
 	public BallShot ballShot;
 
+	public HealthUI healthUI;
+
 	private static Singleton instance;
 	
 

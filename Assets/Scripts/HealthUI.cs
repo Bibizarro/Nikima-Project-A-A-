@@ -6,19 +6,46 @@ using UnityEngine.SceneManagement;
 
 public class HealthUI : MonoBehaviour {
 
-	public Sprite[] healthSprites;
-	public Image UIsprite;
+	public GameObject[] UIHeart;
+	int currentLife;
 
 	void Update () {
-		int currentLife = Singleton.GetInstance.playerScript.health;
+		currentLife = Singleton.GetInstance.playerScript.health;
 
-		if(currentLife > healthSprites.Length)
+		if(currentLife > UIHeart.Length)
 			return;
 		else if(currentLife < 0){
 			SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex);
 			return;
 		}
 
-		UIsprite.sprite = healthSprites[currentLife];
+	}
+	IEnumerator DestroingHeart(GameObject corazon)
+	{
+
+		corazon.GetComponent<SetGlitch>().GlitchNow();
+		yield return new WaitForSeconds(0.5f);
+		corazon.SetActive(false);
+	}
+
+
+	public void LifeCheck()
+	{
+		switch(currentLife)
+		{
+
+			case 2:
+				StartCoroutine(DestroingHeart(UIHeart[2]));
+			break;
+
+			case 1:
+				StartCoroutine(DestroingHeart(UIHeart[1]));
+			break;
+
+			case 0:
+			StartCoroutine(DestroingHeart(UIHeart[0]));
+			break;
+
+		}
 	}
 }

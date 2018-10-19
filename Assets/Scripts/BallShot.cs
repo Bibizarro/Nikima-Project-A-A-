@@ -5,13 +5,29 @@ using UnityEngine;
 public class BallShot : MonoBehaviour {
 
 	public float rotZ;
+
+	public GameObject angleArrow;
+	public BallCount ballCount;
 	[SerializeField] private float offset;
 	[SerializeField] private float[] limits;
 
+    void Start() 
+	{
+		angleArrow.SetActive(false);
+	}
 	void Update () {
-		if(Input.GetMouseButtonUp(0) && rotZ > 0){
+        if(Input.GetMouseButtonDown(0))
+		{
+			angleArrow.SetActive(true);
+
+		} 
+
+		if(Input.GetMouseButtonUp(0) && rotZ > 0)
+		{
+			angleArrow.SetActive(false);
 			PaddleController playerScript = Singleton.GetInstance.playerScript;
-			if(playerScript.activeBall < playerScript.ballCount){
+			if(playerScript.activeBall < playerScript.ballCount)
+			{
 				Shot();
 			}
 		}
@@ -26,11 +42,16 @@ public class BallShot : MonoBehaviour {
 		}
 	}
 	void Shot(){
+		
 		var obj =  ObjectPooler.instance.GetPooledObject();
 		if(obj != null){
 			obj.transform.position = transform.position;
 			obj.SetActive(true);
-			Singleton.GetInstance.playerScript.activeBall++;
+			PaddleController playerScript = Singleton.GetInstance.playerScript;
+			playerScript.activeBall++;
+			playerScript.ballCount--;
+			ballCount.UpdateUI(playerScript.ballCount);
+			
 		}
 
 	}

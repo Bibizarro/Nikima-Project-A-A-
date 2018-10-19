@@ -21,6 +21,7 @@ public class BallScript : MonoBehaviour {
 		{
 			Singleton.GetInstance.cameraScript.CameraShake();
 			Singleton.GetInstance.playerScript.health -= 1;
+			Singleton.GetInstance.healthUI.LifeCheck();
 			Singleton.GetInstance.playerScript.ballsHitted = 0;
 			Singleton.GetInstance.playerScript.activeBall--;
 			gameObject.SetActive(false);
