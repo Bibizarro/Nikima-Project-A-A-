@@ -20,11 +20,6 @@ public class PaddleController : MonoBehaviour {
         ballCount = 3;
         ballCountScript.UpdateUI(ballCount);
 	}
-	
-	void Update ()
-    {
-        
-	}
 
     public void MoveRight()
     {
@@ -45,19 +40,6 @@ public class PaddleController : MonoBehaviour {
       
     }
 
-    void AddingBalls()
-    {
-        if (ballsHitted == 3)
-        {
-            //Add a ball;
-            ballsHitted = 0;
-            if(ballCount < 8){
-                ballCount++;
-                ballCountScript.UpdateUI(ballCount);
-            }
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "GreenBall" || coll.gameObject.tag == "OrangeBall" || coll.gameObject.tag == "BlueBall" || coll.gameObject.tag == "PinkBall")
@@ -67,5 +49,23 @@ public class PaddleController : MonoBehaviour {
         }
     }
 
+    void AddingBalls()
+    {
+        if (ballsHitted == 3)
+        {
+            //Add a ball;
+            ballsHitted = 0;
+            if(ballCount < 8 && (ballCount + activeBall) < 8){
+                ballCount++;
+                ballCountScript.UpdateUI(ballCount);
+            }
+        }
+    }
+
+    public void DecreasingBalls(){
+        activeBall++;
+	    ballCount--;
+		ballCountScript.UpdateUI(ballCount);
+    }
 
 }

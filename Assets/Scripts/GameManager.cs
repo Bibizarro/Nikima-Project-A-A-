@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
         {
             Instantiate(player, playerPos, Quaternion.identity);
         }
-        arrowsTest = false;
+        arrowsTest = true;
 	}
 	
 	// Update is called once per frame

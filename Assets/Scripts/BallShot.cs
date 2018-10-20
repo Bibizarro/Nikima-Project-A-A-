@@ -19,16 +19,16 @@ public class BallShot : MonoBehaviour {
         if(Input.GetMouseButtonDown(0))
 		{
 			angleArrow.SetActive(true);
-
-		} 
+		}
 
 		if(Input.GetMouseButtonUp(0) && rotZ > 0)
 		{
+			print("mouseUp");
 			angleArrow.SetActive(false);
 			PaddleController playerScript = Singleton.GetInstance.playerScript;
-			if(playerScript.activeBall < playerScript.ballCount)
+			if(playerScript.ballCount > 0)
 			{
-				Shot();
+				Shot(playerScript);
 			}
 		}
 
@@ -41,17 +41,13 @@ public class BallShot : MonoBehaviour {
 			transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 		}
 	}
-	void Shot(){
-		
+	void Shot(PaddleController playerScript){
 		var obj =  ObjectPooler.instance.GetPooledObject();
+
 		if(obj != null){
 			obj.transform.position = transform.position;
 			obj.SetActive(true);
-			PaddleController playerScript = Singleton.GetInstance.playerScript;
-			playerScript.activeBall++;
-			playerScript.ballCount--;
-			ballCount.UpdateUI(playerScript.ballCount);
-			
+			playerScript.DecreasingBalls();
 		}
 
 	}

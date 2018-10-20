@@ -7,33 +7,19 @@ using UnityEngine.SceneManagement;
 public class HealthUI : MonoBehaviour {
 
 	public GameObject[] UIHeart;
-	int currentLife;
-
-	void Update () {
-		currentLife = Singleton.GetInstance.playerScript.health;
-
-		if(currentLife > UIHeart.Length)
-			return;
-		else if(currentLife < 0){
-			SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex);
-			return;
-		}
-
-	}
+	
 	IEnumerator DestroingHeart(GameObject corazon)
 	{
 
 		corazon.GetComponent<SetGlitch>().GlitchNow();
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.45f);
 		corazon.SetActive(false);
 	}
 
-
-	public void LifeCheck()
+	public void LifeCheck(int playerHealth)
 	{
-		switch(currentLife)
+		switch(playerHealth)
 		{
-
 			case 2:
 				StartCoroutine(DestroingHeart(UIHeart[2]));
 			break;
@@ -43,7 +29,8 @@ public class HealthUI : MonoBehaviour {
 			break;
 
 			case 0:
-			StartCoroutine(DestroingHeart(UIHeart[0]));
+				StartCoroutine(DestroingHeart(UIHeart[0]));
+				SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex);
 			break;
 
 		}
