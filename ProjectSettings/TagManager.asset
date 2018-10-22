@@ -19,7 +19,7 @@ TagManager:
   - 
   - 
   - Ball
-  - 
+  - Robot
   - 
   - 
   - 
@@ -49,11 +49,14 @@ TagManager:
   - name: BackGround
     uniqueID: 2635564785
     locked: 0
-  - name: Player
-    uniqueID: 4013398233
+  - name: Robot
+    uniqueID: 2485370489
     locked: 0
   - name: Ball
     uniqueID: 2447781217
+    locked: 0
+  - name: Player
+    uniqueID: 4013398233
     locked: 0
   - name: UI
     uniqueID: 1290393849

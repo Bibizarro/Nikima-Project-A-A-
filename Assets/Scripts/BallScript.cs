@@ -17,7 +17,8 @@ public class BallScript : MonoBehaviour {
 		Invoke("IgnoreCollision", 0.5f);
 	}
 
-	void OnTriggerEnter2D (Collider2D coll)
+    #region PhysicsUpdate
+    void OnTriggerEnter2D (Collider2D coll)
 	{
 		if(coll.gameObject.tag == "ScreenBottom")
 		{
@@ -30,7 +31,14 @@ public class BallScript : MonoBehaviour {
 		}
 	}
 
-	void Shot(){
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -6, 6), Mathf.Clamp(rb.velocity.y, -6, 6));   
+    }
+    #endregion PhysicsUpdate
+
+    #region Functions
+    void Shot(){
 		var rotationZ = Singleton.GetInstance.ballShot.rotZ;
 		Vector3 dir = Quaternion.AngleAxis(rotationZ, Vector3.forward) * Vector3.right;
   		rb.AddForce(dir * ballForce);
@@ -44,4 +52,5 @@ public class BallScript : MonoBehaviour {
 	void RandomMaterial(){
 		
 	}
+    #endregion Functions
 }
