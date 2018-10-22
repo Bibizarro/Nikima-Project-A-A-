@@ -13,6 +13,9 @@ public class PaddleController : MonoBehaviour {
     [SerializeField] private float speed;
     [SerializeField] private BallCount ballCountScript;
 
+    public Animator animLeftArrow;
+    public Animator animRightArrow;
+
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         health = 3;
@@ -21,22 +24,32 @@ public class PaddleController : MonoBehaviour {
         ballCountScript.UpdateUI(ballCount);
 	}
 
+    private void Update() {
+        
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-2.18f ,2.18f) , transform.position.y);
+        rb.velocity = new Vector2 (Mathf.Clamp(rb.velocity.x ,-speed * Time.deltaTime, speed * Time.deltaTime) , rb.velocity.y);
+    }
+
     public void MoveRight()
     {
         rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+        animRightArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
     }
     public void MoveLeft()
     {
         rb.velocity = new Vector2(-speed * Time.deltaTime, rb.velocity.y);
+         animLeftArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
     }
 
     public void StopMoveRight()
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
+         animRightArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
     }
     public void StopMoveLeft()
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
+         animLeftArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
       
     }
 

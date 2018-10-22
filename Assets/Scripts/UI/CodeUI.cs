@@ -23,9 +23,6 @@ private Rigidbody2D rb;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void Fall()
 	{
@@ -39,7 +36,8 @@ private Rigidbody2D rb;
 		sp.color = invisible;
 		anim.SetTrigger("glitching");
 		yield return new WaitForSeconds(1f);
-		SceneManager.LoadScene("Game");
+		GameInit();
+		
 	}
 
 	void OnCollisionEnter2D(Collision2D other) 
@@ -48,6 +46,11 @@ private Rigidbody2D rb;
 		oneParticle.Pause();
 		StartCoroutine(ChangingScene());
 		
+	}
+
+	void GameInit()
+	{
+		SceneManager.LoadScene("Game");
 	}
 
 }
