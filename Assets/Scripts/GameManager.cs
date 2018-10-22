@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     public Vector2 playerPos;
 
+    public bool moveBySwipe { get; private set; }
     public bool arrowsTest;
     public GameObject arrowsUI;
 
@@ -18,20 +19,19 @@ public class GameManager : MonoBehaviour {
         {
             Instantiate(player, playerPos, Quaternion.identity);
         }
-        arrowsTest = true;
-	}
+    }
 	
-	// Update is called once per frame
 	void Update () {
 
         if (!arrowsTest)
         {
             arrowsUI.SetActive(false);
+            moveBySwipe = true;
         }
-
         else 
         {
             arrowsUI.SetActive(true);
+            moveBySwipe = false;
         }
 
     }

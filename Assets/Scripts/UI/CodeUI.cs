@@ -38,7 +38,7 @@ private Rigidbody2D rb;
 		canvas.SetActive(false);
 		sp.color = invisible;
 		anim.SetTrigger("glitching");
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(.65f);
 		SceneManager.LoadScene("Game");
 	}
 
@@ -47,7 +47,6 @@ private Rigidbody2D rb;
 		zeroParticle.Pause();
 		oneParticle.Pause();
 		StartCoroutine(ChangingScene());
-		
 	}
 
 }

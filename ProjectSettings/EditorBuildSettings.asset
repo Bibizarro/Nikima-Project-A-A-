@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Editores/Rabih.unity
     guid: c5c31bc31a0a7ca4f81ed4a02f41712d
   - enabled: 1
