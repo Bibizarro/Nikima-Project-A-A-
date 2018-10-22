@@ -17,7 +17,14 @@ public class PaddleController : MonoBehaviour {
     [SerializeField] private float speed;
     [SerializeField] private BallCount ballCountScript;
 
+<<<<<<< HEAD
 	void Start (){
+=======
+    public Animator animLeftArrow;
+    public Animator animRightArrow;
+
+	void Start () {
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
 
@@ -32,16 +39,30 @@ public class PaddleController : MonoBehaviour {
         moveBySwipe = managerOpt.moveBySwipe;
 	}
 
+<<<<<<< HEAD
     void Update()
     {
         moveBySwipe = managerOpt.moveBySwipe;
         print("moving: " + isMovingWithSwipe);
         print("clicking: " + isClicking);
+=======
+    private void Update() {
+        
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-2.18f ,2.18f) , transform.position.y);
+        rb.velocity = new Vector2 (Mathf.Clamp(rb.velocity.x ,-speed * Time.deltaTime, speed * Time.deltaTime) , rb.velocity.y);
+    }
+
+    public void MoveRight()
+    {
+        rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+        animRightArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
     }
 
     #region InputEvents
     void OnMouseDown()
     {
+<<<<<<< HEAD
         if (moveBySwipe)
         {
             Collider2D collOnPoint = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -50,23 +71,38 @@ public class PaddleController : MonoBehaviour {
                 isMovingWithSwipe = true;
             }
         }
+=======
+        rb.velocity = new Vector2(-speed * Time.deltaTime, rb.velocity.y);
+         animLeftArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
     }
 
     void OnMouseUp()
     {
+<<<<<<< HEAD
         if(moveBySwipe)
         StartCoroutine(TurnMoveFalse(0.0005f));
+=======
+        rb.velocity = new Vector2(0, rb.velocity.y);
+         animRightArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
     }
     #endregion InputEvents
 
     #region PhysicsUpdate
     void FixedUpdate()
     {
+<<<<<<< HEAD
         if (isMovingWithSwipe && moveBySwipe)
         {
             Vector3 realMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             rb.MovePosition(new Vector2(realMousePos.x, rb.position.y));
         }
+=======
+        rb.velocity = new Vector2(0, rb.velocity.y);
+         animLeftArrow.SetInteger("glitching", Mathf.RoundToInt(rb.velocity.x));
+      
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
     }
     void OnCollisionEnter2D(Collision2D coll)
     {

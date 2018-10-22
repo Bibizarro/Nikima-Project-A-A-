@@ -23,9 +23,6 @@ private Rigidbody2D rb;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void Fall()
 	{
@@ -38,8 +35,14 @@ private Rigidbody2D rb;
 		canvas.SetActive(false);
 		sp.color = invisible;
 		anim.SetTrigger("glitching");
+<<<<<<< HEAD
 		yield return new WaitForSeconds(.65f);
 		SceneManager.LoadScene("Game");
+=======
+		yield return new WaitForSeconds(1f);
+		GameInit();
+		
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
 	}
 
 	void OnCollisionEnter2D(Collision2D other) 
@@ -47,6 +50,11 @@ private Rigidbody2D rb;
 		zeroParticle.Pause();
 		oneParticle.Pause();
 		StartCoroutine(ChangingScene());
+	}
+
+	void GameInit()
+	{
+		SceneManager.LoadScene("Game");
 	}
 
 }
