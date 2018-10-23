@@ -15,7 +15,11 @@ public class CameraController : MonoBehaviour
     public void CameraShake()
     {
         an.SetTrigger("shake");
+<<<<<<< HEAD
          Handheld.Vibrate();
  
+=======
+        Handheld.Vibrate();
+>>>>>>> cf0a8a87b4d97d648c47c477ee0e61fe8a577875
     }
 }

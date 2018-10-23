@@ -5047,7 +5047,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ReferenceResolution: {x: 1200, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6545,8 +6545,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+  m_AnchoredPosition: {x: 0, y: 0.0024719}
+  m_SizeDelta: {x: 1200, y: 1920}
+=======
   m_AnchoredPosition: {x: 0, y: -38.1}
   m_SizeDelta: {x: 1081.2, y: 2389.6}
+>>>>>>> caa711f0bb597eeb293d1378fdf716df7b6e5748
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1942770551
 Animator:
@@ -11616,6 +11621,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7237375, y: -4.416194}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 3.9345, y: -4.627}
+  m_SizeDelta: {x: 172.9295, y: 172.9295}
   m_Pivot: {x: 0.5, y: 0.5}
